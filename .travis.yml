@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t terenian/docker-react .
+  - docker build -t terenian/docker-react -f Dockerfile.dev .
 script:
   - docker run -e CI=true terenian/docker-react npm run test
 deploy:
